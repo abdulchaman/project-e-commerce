@@ -1,13 +1,13 @@
 import React from "react";
 import {Grid} from "@material-ui/core";
 import Product from "./Product/Product";
-const products =[
-    {id:1,name:"Shoes",description:"Running Shoes.",price:"$5"},
-    {id:2,name:"Macbook",description:"Apple macbook.",price:"$10"}
-];
-const Products = ()=>{
+import useStyles from "./styles";
+
+const Products = ({products})=>{
+    const classes = useStyles();
     return(
-        <main>
+        <main className={classes.content}>
+            <div className={classes.toolbar}></div>
             <Grid container justifyContent="center" spacing={4}>
                 {products.map((product)=>{
                     return(
